@@ -11,13 +11,12 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 # Our little project 
 
-Task to visualize the fibonacci numerbs on a 12 LED stripe 
-using a lot of colrs
+TTask: Visualize the Fibonacci numbers on a 12-LED strip using a lot of colors.
 ---
-## short refresh what numbers are these?
+## Quick refresher: What are these numbers?
 
 - A sequence of numbers where each number is the sum of the two preceding ones
-- first two numvers are 0 and 1 
+- The first two numbers are 0 and 1
 - Example: 0, 1, 1, 2, 3, 5, 8, 13, ...
 
 ![](https://www.meisterdrucke.at/kunstwerke/1260px/Unknown_Artist_-_Portrait_of_Leonardo_Fibonacci_%281170-1245%29_%28Leonard_of_Pisa%29_Italian_mathematici_-_%28MeisterDrucke-927685%29.jpg)
