@@ -11,7 +11,7 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 # Our little project 
 
-TTask: Visualize the Fibonacci numbers on a 12-LED strip using a lot of colors.
+Task: Visualize the Fibonacci numbers on a 12-LED strip.
 ---
 ## Quick refresher: What are these numbers?
 
@@ -37,7 +37,7 @@ biological settings
 
 - arrangement of leaves on a stem and pine cone`s bracts
 - flowering of an artichoke
-
+![](https://thesmarthappyproject.com/wp-content/uploads/2015/06/LucaPostpischi-sunflower.jpg)
 
 ---
 
@@ -57,15 +57,15 @@ biological settings
 #define BRIGHTNESS 180
 #define NUM_LEDS 12
 
-#define startRed 255
-#define startGreen 0
-#define startBlue 0
+#define STARTRED 255
+#define STARTGREEN 0
+#define STARTBLUE 0
 
 CRGB leds[NUM_LEDS]; // Array to hold the LED colors
 
-int redColor = startRed;
-int greenColor = startGreen;
-int blueColor = startBlue;
+int redColor = STARTRED;
+int greenColor = STARTGREEN;
+int blueColor = STARTBLUE;
 
 int secondLastFib = 0;
 int lastFib = 1;
@@ -131,9 +131,9 @@ void calculateBinaryFibonacci() {
     lastFib = 1;
     currentFib = secondLastFib + lastFib;
     
-    redColor = startRed;
-    greenColor = startGreen;
-    blueColor = startBlue;
+    redColor = STARTRED;
+    greenColor = STARTGREEN;
+    blueColor = STARTBLUE;
     
   } else {
     secondLastFib = lastFib;
@@ -172,9 +172,9 @@ void calculateBinaryFibonacci() {
     currentFib = secondLastFib + lastFib;
     
     // Reset color variables to their initial values
-    redColor = startRed;
-    greenColor = startGreen;
-    blueColor = startBlue;
+    redColor = STARTRED;
+    greenColor = STARTGREEN;
+    blueColor = STARTBLUE;
     
     // Turn off all LEDs
     for (int i = 0; i < NUM_LEDS; i++) {
@@ -236,4 +236,7 @@ img.:
 
 <br>
 
-2. [https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&frame=1&width=987&height=1024&fit=bounds&md=2346be4c862f23b667485614514cf2fd](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&frame=1&width=987&height=1024&fit=bounds&md=2346be4c862f23b667485614514cf2fd)
+2. [https://thesmarthappyproject.com/wp-content/uploads/2015/06/LucaPostpischi-sunflower.jpg](https://thesmarthappyproject.com/wp-content/uploads/2015/06/LucaPostpischi-sunflower.jpg)
+
+<br>
+3. [https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&frame=1&width=987&height=1024&fit=bounds&md=2346be4c862f23b667485614514cf2fd](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&frame=1&width=987&height=1024&fit=bounds&md=2346be4c862f23b667485614514cf2fd)
