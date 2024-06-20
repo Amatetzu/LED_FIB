@@ -22,11 +22,11 @@ TTask: Visualize the Fibonacci numbers on a 12-LED strip using a lot of colors.
 ![](https://www.meisterdrucke.at/kunstwerke/1260px/Unknown_Artist_-_Portrait_of_Leonardo_Fibonacci_%281170-1245%29_%28Leonard_of_Pisa%29_Italian_mathematici_-_%28MeisterDrucke-927685%29.jpg)
 
 ---
-## Where can you find the fiboncci numbers?
+## Where can you find the Fibonacci numbers?
 
 computer science
 
-- fiboncci search technique 
+- Fibonacci Search Technique
 - fibonacci heap 
 
     - helpful for Dijkstra algorithm
