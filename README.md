@@ -56,18 +56,22 @@ biological settings
 #define BRIGHTNESS 180
 #define NUM_LEDS 12
 
+#define startRed 255
+#define startGreen 0
+#define startBlue 0
+
 CRGB leds[NUM_LEDS]; // Array to hold the LED colors
 
-int redColor = 0;
-int greenColor = 0;
-int blueColor = 0;
+int redColor = startRed;
+int greenColor = startGreen;
+int blueColor = startBlue;
 
 int secondLastFib = 0;
 int lastFib = 1;
 int bits[NUM_LEDS] = {0}; // Array to store binary representation of Fibonacci sequence
 
 int counter = 0;
-const int MAXCOUNTER = 1000; // Adjust as needed
+const int MAXCOUNTER = 765; // Adjust as needed
 
 void setup() {
   FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS); // Initialize FastLED library with NEOPIXEL type and LED data pin
@@ -102,11 +106,11 @@ void pickColor() {
     redColor -= stepsize;
     greenColor += stepsize;
   } else if (counter > MAXCOUNTER - third_max) {
-    redColor += stepsize;
-    blueColor -= stepsize;
-  } else {
-    greenColor -= stepsize;
     blueColor += stepsize;
+    greenColor -= stepsize;
+  } else {
+    redColor -= stepsize;
+    blueColor -= stepsize;
   }
   
   counter += 1;
@@ -126,9 +130,9 @@ void calculateBinaryFibonacci() {
     currentFib = secondLastFib + lastFib;
     
     // Reset color variables to their initial values
-    redColor = 0;
-    greenColor = 0;
-    blueColor = 0;
+    redColor = startRed;
+    greenColor = startGreen;
+    blueColor = startBlue;
     
     // Turn off all LEDs
     for (int i = 0; i < NUM_LEDS; i++) {
@@ -158,5 +162,69 @@ int calcMax(int ledNum) {
 ```
 @AVR8js.sketch(matrix-experiment)
 
+## calculateBinaryFibonacci
+
+``` js
+void calculateBinaryFibonacci() {
+  int currentFib = secondLastFib + lastFib; // Calculate the next Fibonacci number
+
+  // Reset Fibonacci sequence if current number exceeds the maximum representable by NUM_LEDS bits
+  if (currentFib > calcMax(NUM_LEDS)) {
+    secondLastFib = 0;
+    lastFib = 1;
+    currentFib = secondLastFib + lastFib;
+    
+    // Reset color variables to their initial values
+    redColor = 0;
+    greenColor = 0;
+    blueColor = 0;
+    
+    // Turn off all LEDs
+    for (int i = 0; i < NUM_LEDS; i++) {
+      leds[i] = CRGB::Black;
+    }
+  } else {
+    secondLastFib = lastFib;
+    lastFib = currentFib;
+  }
+
+  // Convert Fibonacci number to binary and store in bits array
+  for (int i = 0; i < NUM_LEDS; i++) {
+    bits[i] = (currentFib >> i) & 1;  // Use bitwise operations to extract each bit of the Fibonacci number
+  }
+}
+```
 
 
+
+## pickColor
+
+
+``` js
+void pickColor() {
+  int third_max = MAXCOUNTER / 3;
+  int stepsize = 15; // Adjust as needed
+
+  if (counter < third_max) {
+    redColor -= stepsize;
+    greenColor += stepsize;
+  } else if (counter > MAXCOUNTER - third_max) {
+    redColor += stepsize;
+    blueColor -= stepsize;
+  } else {
+    greenColor -= stepsize;
+    blueColor += stepsize;
+  }
+  
+  counter += 1;
+  if (counter >= MAXCOUNTER) {
+    counter = 0;
+  }
+}
+```
+
+![RGB collors](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&frame=1&width=320&md=2346be4c862f23b667485614514cf2fd)
+
+## sources
+
+[](https://https://www.instructables.com/How-to-Make-Proper-Rainbow-and-Random-Colors-With-/)
