@@ -20,6 +20,8 @@ using a lot of colrs
 - first two numvers are 0 and 1 
 - Example: 0, 1, 1, 2, 3, 5, 8, 13, ...
 
+![](https://www.meisterdrucke.at/kunstwerke/1260px/Unknown_Artist_-_Portrait_of_Leonardo_Fibonacci_%281170-1245%29_%28Leonard_of_Pisa%29_Italian_mathematici_-_%28MeisterDrucke-927685%29.jpg)
+
 ---
 ## Where can you find the fiboncci numbers?
 
@@ -92,6 +94,7 @@ void loop() {
     }
   }
 
+
   FastLED.show(); // Display the LEDs with the updated colors
 
   delay(1000); // Delay for 1 second before repeating the loop
@@ -99,7 +102,7 @@ void loop() {
 
 // Function to pick RGB color values
 void pickColor() {
-  int third_max = MAXCOUNTER / 3;
+  int third_max = (MAXCOUNTER / 3);
   int stepsize = 15; // Adjust as needed
 
   if (counter < third_max) {
@@ -129,15 +132,7 @@ void calculateBinaryFibonacci() {
     lastFib = 1;
     currentFib = secondLastFib + lastFib;
     
-    // Reset color variables to their initial values
-    redColor = startRed;
-    greenColor = startGreen;
-    blueColor = startBlue;
     
-    // Turn off all LEDs
-    for (int i = 0; i < NUM_LEDS; i++) {
-      leds[i] = CRGB::Black;
-    }
   } else {
     secondLastFib = lastFib;
     lastFib = currentFib;
@@ -222,9 +217,21 @@ void pickColor() {
   }
 }
 ```
+<br>
 
-![RGB collors](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&frame=1&width=320&md=2346be4c862f23b667485614514cf2fd)
+
+![RGB colors](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&frame=1&width=320&md=2346be4c862f23b667485614514cf2fd) <!--style="width: 80%; max-width: 70vh;"-->
+
 
 ## sources
 
-[](https://https://www.instructables.com/How-to-Make-Proper-Rainbow-and-Random-Colors-With-/)
+text: 
+[https://www.meisterdrucke.at/kunstwerke/1260px/Unknown_Artist_-_Portrait_of_Leonardo_Fibonacci_%281170-1245%29_%28Leonard_of_Pisa%29_Italian_mathematici_-_%28MeisterDrucke-927685%29.jpg](https://www.meisterdrucke.at/kunstwerke/1260px/Unknown_Artist_-_Portrait_of_Leonardo_Fibonacci_%281170-1245%29_%28Leonard_of_Pisa%29_Italian_mathematici_-_%28MeisterDrucke-927685%29.jpg)
+
+img.: 
+
+1. [https://upload.wikimedia.org/wikipedia/commons/a/a2/Fibonacci.jpg](https://upload.wikimedia.org/wikipedia/commons/a/a2/Fibonacci.jpg)
+
+<br>
+
+2. [https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&frame=1&width=987&height=1024&fit=bounds&md=2346be4c862f23b667485614514cf2fd](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&frame=1&width=987&height=1024&fit=bounds&md=2346be4c862f23b667485614514cf2fd)
