@@ -131,10 +131,6 @@ void calculateBinaryFibonacci() {
     lastFib = 1;
     currentFib = secondLastFib + lastFib;
     
-    redColor = STARTRED;
-    greenColor = STARTGREEN;
-    blueColor = STARTBLUE;
-    
   } else {
     secondLastFib = lastFib;
     lastFib = currentFib;
@@ -170,11 +166,6 @@ void calculateBinaryFibonacci() {
     secondLastFib = 0;
     lastFib = 1;
     currentFib = secondLastFib + lastFib;
-    
-    // Reset color variables to their initial values
-    redColor = STARTRED;
-    greenColor = STARTGREEN;
-    blueColor = STARTBLUE;
     
     // Turn off all LEDs
     for (int i = 0; i < NUM_LEDS; i++) {
