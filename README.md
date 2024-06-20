@@ -7,7 +7,7 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 -->
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Supergecki/ino-clock/main/README.md#1)
-[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://github.com/Amatetzu/LED_FIB/blob/main/README.md#1)
+[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Amatetzu/LED_FIB/main/README.md#1)
 
 # Our little project 
 
