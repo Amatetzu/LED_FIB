@@ -156,6 +156,54 @@ int calcMax(int ledNum) {
 
 ## calculateBinaryFibonacci
 
+```js
+void calculateBinaryFibonacci() {
+  int currentFib = secondLastFib + lastFib; // Calculate the next Fibonacci number
+
+  // Reset Fibonacci sequence if current number exceeds the maximum representable by NUM_LEDS bits
+  if (currentFib > calcMax(NUM_LEDS)) {
+    secondLastFib = 0;
+    lastFib = 1;
+    currentFib = secondLastFib + lastFib;
+    
+  } else {
+    secondLastFib = lastFib;
+    lastFib = currentFib;
+  }
+
+  // Convert Fibonacci number to binary and store in bits array
+  for (int i = 0; i < NUM_LEDS; i++) {
+    bits[i] = (currentFib >> i) & 1;  // Use bitwise operations to extract each bit of the Fibonacci number
+  }
+}
+```
+
+## pickColor
+
+```
+void pickColor() {
+  int third_max = (MAXCOUNTER / 3);
+  int stepsize = 15; // Adjust as needed
+
+  if (counter < third_max) {
+    redColor -= stepsize;
+    greenColor += stepsize;
+  } else if (counter > MAXCOUNTER - third_max) {
+    blueColor += stepsize;
+    greenColor -= stepsize;
+  } else {
+    redColor -= stepsize;
+    blueColor -= stepsize;
+  }
+  
+  counter += 1;
+  if (counter >= MAXCOUNTER) {
+    counter = 0;
+  }
+}
+
+```
+
 
 
 # sources
