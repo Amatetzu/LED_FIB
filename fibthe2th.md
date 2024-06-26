@@ -226,31 +226,7 @@ void calculateColor() {
 ```
 ![](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&fit=bounds&frame=1&height=1024&width=1024auto=webp&frame=1&height=150)
 
-<!---
-## Problems
-```
-void pickColor() {
-  int third_max = MAXCOUNTER / 3;
-  int stepsize = 15; // Adjust as needed
 
-  if (counter < third_max) {
-    redColor -= stepsize;
-    greenColor += stepsize;
-  } else if (counter > MAXCOUNTER - third_max) {
-    redColor += stepsize;
-    blueColor -= stepsize;
-  } else {
-    greenColor -= stepsize;
-    blueColor += stepsize;
-  }
-  
-  counter += 1;
-  if (counter >= MAXCOUNTER) {
-    counter = 0;
-  }
-}
-```
--->
 # sources
 
 text: 
