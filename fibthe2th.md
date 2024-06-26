@@ -205,7 +205,7 @@ void pickColor() {
 ```
 ![](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&fit=bounds&frame=1&height=1024&width=1024auto=webp&frame=1&height=150)
 
-
+<!---
 ## Problems
 ```
 void pickColor() {
@@ -229,7 +229,7 @@ void pickColor() {
   }
 }
 ```
-
+-->
 # sources
 
 text: 
