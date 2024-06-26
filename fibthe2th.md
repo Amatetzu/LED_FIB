@@ -203,6 +203,8 @@ void pickColor() {
 }
 
 ```
+![](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&fit=bounds&frame=1&height=1024&width=1024auto=webp&frame=1&height=150)
+
 
 ## Problems
 ```
@@ -237,3 +239,4 @@ text:
 img.: 
 
 1. [https://thesmarthappyproject.com/wp-content/uploads/2015/06/LucaPostpischi-sunflower.jpg](https://thesmarthappyproject.com/wp-content/uploads/2015/06/LucaPostpischi-sunflower.jpg)
+2. [https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&fit=bounds&frame=1&height=1024&width=1024auto=webp&frame=1&height=150](https://content.instructables.com/FTI/O536/IIG9YHKA/FTIO536IIG9YHKA.jpg?auto=webp&fit=bounds&frame=1&height=1024&width=1024auto=webp&frame=1&height=150)
