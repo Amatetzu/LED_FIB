@@ -12,7 +12,6 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 # Fibonacci Numbers in Binary with Arduino and LED Strip
 
-## Introduction
 
 ### Fibonacci Sequence
 The **Fibonacci sequence** is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. For example: 0, 1, 1, 2, 3, 5, 8, 13, ...
