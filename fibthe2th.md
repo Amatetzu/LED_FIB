@@ -58,62 +58,78 @@ Fibonacci numbers appear in many different areas, including:
 #define BRIGHTNESS 180
 #define NUM_LEDS 12
 
-#define STARTRED 255
-#define STARTGREEN 0
-#define STARTBLUE 0
-
 CRGB leds[NUM_LEDS]; // Array to hold the LED colors
-
-int redColor = STARTRED;
-int greenColor = STARTGREEN;
-int blueColor = STARTBLUE;
+int redValue, greenValue, blueValue;
 
 int secondLastFib = 0;
 int lastFib = 1;
+int maxFib;
 int bits[NUM_LEDS] = {0}; // Array to store binary representation of Fibonacci sequence
 
-int counter = 0;
-const int MAXCOUNTER = 765; // Adjust as needed
+double counter = 0;
+const double MAXCOUNTER = 30; // Adjust as needed
 
 void setup() {
   FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS); // Initialize FastLED library with NEOPIXEL type and LED data pin
   FastLED.setBrightness(BRIGHTNESS); // Set LED brightness
+
+  redValue = 255;
+  greenValue = 0;
+  blueValue = 0;
+
+  maxFib = calcMax(NUM_LEDS);
+
   Serial.begin(9600); // Initialize serial communication for debugging
 }
 
 void loop() {
-  pickColor(); // Pick RGB color values
+  calculateColor(); // Pick RGB color values
   calculateBinaryFibonacci(); // Calculate next Fibonacci number and convert it to binary
 
   // Set LEDs based on the bits array
   for (int i = 0; i < NUM_LEDS; i++) {
     if (bits[i]) {
-      leds[i] = CRGB(redColor, greenColor, blueColor); // Set LED color to random RGB values
+      leds[i] = CRGB(redValue, greenValue, blueValue); // Set LED color to calculated values
     } else {
       leds[i] = CRGB::Black; // Turn LED off if bit is 0
     }
   }
 
-
   FastLED.show(); // Display the LEDs with the updated colors
+
+  /*
+  Serial.print(redValue);
+  Serial.print(";");
+  Serial.print(greenValue);
+  Serial.print(";");
+  Serial.print(blueValue);
+  Serial.println();
+  */
 
   delay(1000); // Delay for 1 second before repeating the loop
 }
 
 // Function to pick RGB color values
-void pickColor() {
+void calculateColor() {
   int third_max = (MAXCOUNTER / 3);
-  int stepsize = 15; // Adjust as needed
 
   if (counter < third_max) {
-    redColor -= stepsize;
-    greenColor += stepsize;
+    //First phase
+    greenValue = 255 * (counter / third_max);       //Rising flank
+    redValue = -255 * (counter / third_max) + 255;  //Falling flank
+    blueValue = 0;                                  //Resting
   } else if (counter > MAXCOUNTER - third_max) {
-    blueColor += stepsize;
-    greenColor -= stepsize;
+    double adjustedCounter = counter - 2 * third_max;
+    //Third Phase
+    redValue = 255 * (adjustedCounter / third_max);
+    blueValue = -255 * (adjustedCounter / third_max) + 255;
+    greenValue = 0;
   } else {
-    redColor -= stepsize;
-    blueColor -= stepsize;
+    double adjustedCounter = counter - third_max;
+    //Second Phase
+    blueValue = 255 * (adjustedCounter / third_max);
+    greenValue = -255 * (adjustedCounter / third_max) + 255;
+    redValue = 0;
   }
   
   counter += 1;
@@ -124,14 +140,13 @@ void pickColor() {
 
 // Function to calculate the next Fibonacci number and convert it to binary
 void calculateBinaryFibonacci() {
-  int currentFib = secondLastFib + lastFib; // Calculate the next Fibonacci number
+  int currentFib = secondLastFib + lastFib; // Formula for the next Fibonacci number
 
   // Reset Fibonacci sequence if current number exceeds the maximum representable by NUM_LEDS bits
-  if (currentFib > calcMax(NUM_LEDS)) {
+  if (currentFib > maxFib) {
     secondLastFib = 0;
     lastFib = 1;
     currentFib = secondLastFib + lastFib;
-    
   } else {
     secondLastFib = lastFib;
     lastFib = currentFib;
@@ -151,8 +166,6 @@ int calcMax(int ledNum) {
   }
   return max - 1; // Return the maximum Fibonacci number that fits within NUM_LEDS bits (2^ledNum - 1)
 }
-
-
 ```
 @AVR8js.sketch(matrix-experiment)
 
@@ -160,14 +173,13 @@ int calcMax(int ledNum) {
 
 ```js
 void calculateBinaryFibonacci() {
-  int currentFib = secondLastFib + lastFib; // Calculate the next Fibonacci number
+  int currentFib = secondLastFib + lastFib; // Formula for the next Fibonacci number
 
   // Reset Fibonacci sequence if current number exceeds the maximum representable by NUM_LEDS bits
-  if (currentFib > calcMax(NUM_LEDS)) {
+  if (currentFib > maxFib) {
     secondLastFib = 0;
     lastFib = 1;
     currentFib = secondLastFib + lastFib;
-    
   } else {
     secondLastFib = lastFib;
     lastFib = currentFib;
@@ -180,22 +192,29 @@ void calculateBinaryFibonacci() {
 }
 ```
 
-## pickColor
+## calculateColor
 
 ```
-void pickColor() {
+void calculateColor() {
   int third_max = (MAXCOUNTER / 3);
-  int stepsize = 15; // Adjust as needed
 
   if (counter < third_max) {
-    redColor -= stepsize;
-    greenColor += stepsize;
+    //First phase
+    greenValue = 255 * (counter / third_max);       //Rising flank
+    redValue = -255 * (counter / third_max) + 255;  //Falling flank
+    blueValue = 0;                                  //Resting
   } else if (counter > MAXCOUNTER - third_max) {
-    blueColor += stepsize;
-    greenColor -= stepsize;
+    double adjustedCounter = counter - 2 * third_max;
+    //Third Phase
+    redValue = 255 * (adjustedCounter / third_max);
+    blueValue = -255 * (adjustedCounter / third_max) + 255;
+    greenValue = 0;
   } else {
-    redColor -= stepsize;
-    blueColor -= stepsize;
+    double adjustedCounter = counter - third_max;
+    //Second Phase
+    blueValue = 255 * (adjustedCounter / third_max);
+    greenValue = -255 * (adjustedCounter / third_max) + 255;
+    redValue = 0;
   }
   
   counter += 1;
