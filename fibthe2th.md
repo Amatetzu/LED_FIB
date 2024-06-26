@@ -204,7 +204,29 @@ void pickColor() {
 
 ```
 
+## Problems
+```
+void pickColor() {
+  int third_max = MAXCOUNTER / 3;
+  int stepsize = 15; // Adjust as needed
 
+  if (counter < third_max) {
+    redColor -= stepsize;
+    greenColor += stepsize;
+  } else if (counter > MAXCOUNTER - third_max) {
+    redColor += stepsize;
+    blueColor -= stepsize;
+  } else {
+    greenColor -= stepsize;
+    blueColor += stepsize;
+  }
+  
+  counter += 1;
+  if (counter >= MAXCOUNTER) {
+    counter = 0;
+  }
+}
+```
 
 # sources
 
