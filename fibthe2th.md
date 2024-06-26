@@ -24,9 +24,9 @@ The **Fibonacci sequence** is a series of numbers where each number is the sum o
  
 
 - **Introduction to the Western World**
-  - Brought to Europe by Leonardo of Pisa, known as Fibonacci.
-  - Described in his book *Liber Abaci* (The Book of Calculation), published in 1202.
-  - Fibonacci introduced the sequence while discussing the growth of a rabbit population.
+- Brought to Europe by Leonardo of Pisa, known as Fibonacci.
+- Described in his book *Liber Abaci* (The Book of Calculation), published in 1202.
+- Fibonacci introduced the sequence while discussing the growth of a rabbit population.
 
 
 ## Applications
