@@ -23,6 +23,7 @@ The **Fibonacci sequence** is a series of numbers where each number is the sum o
  - Known as early as the 6th century in Indian mathematics.
 - Described in Indian mathematical texts such as the *Chandahshastra* by Pingala (c. 200 BC) and later by Virahanka (c. 600 AD).
 <br>
+
 **Introduction to the Western World**
 
 - Brought to Europe by Leonardo of Pisa, known as Fibonacci.
