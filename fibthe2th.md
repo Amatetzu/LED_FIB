@@ -16,14 +16,15 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 ## Fibonacci Sequence
 The **Fibonacci sequence** is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. For example: 0, 1, 1, 2, 3, 5, 8, 13, ...
+<br>
 
 **Origins in India**
-  - Known as early as the 6th century in Indian mathematics.<br>
-  - Described in Indian mathematical texts such as the *Chandahshastra* by Pingala (c. 200 BC) and later by Virahanka (c. 600 AD).
 
- 
-
+ - Known as early as the 6th century in Indian mathematics.
+- Described in Indian mathematical texts such as the *Chandahshastra* by Pingala (c. 200 BC) and later by Virahanka (c. 600 AD).
+<br>
 **Introduction to the Western World**
+
 - Brought to Europe by Leonardo of Pisa, known as Fibonacci.
 - Described in his book *Liber Abaci* (The Book of Calculation), published in 1202.
 - Fibonacci introduced the sequence while discussing the growth of a rabbit population.
