@@ -18,8 +18,8 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 The **Fibonacci sequence** is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. For example: 0, 1, 1, 2, 3, 5, 8, 13, ...
 
 - **Origins in India**
-  - Known as early as the 6th century in Indian mathematics.
-  - Described in Indian mathematical texts such as the *Chandahshastra* by Pingala (c. 200 BC) and later by Virahanka (c. 600 AD).
+- Known as early as the 6th century in Indian mathematics.
+- Described in Indian mathematical texts such as the *Chandahshastra* by Pingala (c. 200 BC) and later by Virahanka (c. 600 AD).
 
  
 
