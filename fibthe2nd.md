@@ -37,6 +37,7 @@ Fibonacci numbers appear in many different areas, including:
 - **Nature**: Patterns of leaves, flowers, and shells often follow the Fibonacci sequence.
 - **Art and Architecture**: The Golden Ratio, closely related to Fibonacci numbers, is used for aesthetically pleasing proportions.
 - **Computer Science**: Algorithms for searching and sorting, data structures like heaps, and dynamic programming problems often utilize Fibonacci numbers.
+  - good for starters
 - **Finance**: Technical analysts use Fibonacci retracement levels to predict stock price movements.
 
 <br>
