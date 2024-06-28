@@ -8,7 +8,7 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 -->
 
-[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Amatetzu/LED_FIB/main/fibthe2nd.md#1)
+[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Amatetzu/LED_FIB/main/README.md#1)
 
 # Fibonacci Numbers in Binary with Arduino and LED Strip
 ![](https://www.meisterdrucke.at/kunstwerke/1260px/Unknown_Artist_-_Portrait_of_Leonardo_Fibonacci_%281170-1245%29_%28Leonard_of_Pisa%29_Italian_mathematici_-_%28MeisterDrucke-927685%29.jpg)
